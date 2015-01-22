@@ -14,14 +14,6 @@
 Blade::setContentTags('<%', '%>'); 		// for variables and all things Blade
 Blade::setEscapedContentTags('<%%', '%%>'); 	// for escaped data
 
-//web group
-Route::get('/', function()
-{
-    return Redirect::to('admin/home/');});
-
-Route::get('/login','UserController@showLogin');
-Route::post('/login','UserApiController@postLogin');
-
 
 //only login can access
 
