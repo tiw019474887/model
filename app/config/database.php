@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'neo4j',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -82,6 +82,13 @@ return array(
 			'password' => '',
 			'prefix'   => '',
 		),
+        'neo4j' => [
+            'driver' => 'neo4j',
+            'host'   => 'localhost',
+            'port'   => '7474',
+            'username' => null,
+            'password' => null
+        ]
 
 	),
 
