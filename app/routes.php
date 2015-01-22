@@ -14,14 +14,6 @@
 Blade::setContentTags('<%', '%>'); 		// for variables and all things Blade
 Blade::setEscapedContentTags('<%%', '%%>'); 	// for escaped data
 
-//mobile group
-Route::group(array(),function(){
-    Route::controller('api/v1/news','NewsMobileApiController');
-    Route::controller('api/v1/projects','ProjectMobileApiController');
-
-});
-
-
 //web group
 Route::get('/', function()
 {
@@ -49,14 +41,7 @@ Route::group(array('before' => 'auth'), function(){
     Route::controller('admin/news','NewsController');
 
 
-    Route::controller('api/users','UserApiController');
-    Route::controller('api/researchers','ResearcherApiController');
-    Route::controller('api/research-projects','ResearchProjectApiController');
-    Route::controller('api/faculties','FacultyApiController');
-    Route::controller('api/apis','ApiApiController');
-    Route::controller('api/news','NewsApiController');
-
-    Route::get('/logout','UserController@showLogout');
+       Route::get('/logout','UserController@showLogout');
     Route::get('/current-user','UserApiController@getCurrentUser');
 
 });
