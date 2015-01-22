@@ -11,7 +11,41 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
+Blade::setContentTags('<%', '%>'); 		// for variables and all things Blade
+Blade::setEscapedContentTags('<%%', '%%>'); 	// for escaped data
+
+
 });
+
+
+
+//only login can access
+
+Route::group(array('before' => 'auth'), function(){
+
+    Route::get('admin',function(){
+        return Redirect::to('admin/home/');
+    });
+
+    Route::controller('admin/home/','AdminHomeController');
+    Route::controller('admin/user','UserController');
+    Route::controller('admin/researcher','ResearcherController');
+    Route::controller('admin/faculty','FacultyController');
+    Route::controller('admin/api','ApiController');
+    Route::controller('admin/research-project','ResearchProjectController');
+    Route::controller('admin/api','ApiController');
+    Route::controller('admin/news','NewsController');
+
+
+
+  
+});
+
+
+Route::get('/test',function(){
+    echo Auth::check();
+});
+
+
+
+
