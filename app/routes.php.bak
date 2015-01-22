@@ -41,7 +41,8 @@ Route::group(array('before' => 'auth'), function(){
     Route::controller('admin/news','NewsController');
 
 
-     
+       Route::get('/logout','UserController@showLogout');
+    Route::get('/current-user','UserApiController@getCurrentUser');
 
 });
 
