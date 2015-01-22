@@ -1,0 +1,13 @@
+/bootstrap/compiled.php
+/vendor
+composer.phar
+composer.lock
+.env.*.php
+.env.php
+.DS_Store
+Thumbs.db
+<<<<<<< HEAD
+.idea/workspace.xml
+=======
+/.idea
+>>>>>>> 0a065a0122532c2ee9045fa9b60e35e4f1b78c7b
